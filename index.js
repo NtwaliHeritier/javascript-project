@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+    display_countries()
+})
+
 let countries = []
 let base_url = "https://restcountries.com/v3.1/"
 let url = ""
@@ -23,7 +27,6 @@ const display_countries = async() => {
     const container = document.querySelector(".container")
     if(response) {
         for(let country of response) {
-            console.log(country)
             const country_div = document.createElement("div")
             add_country_div_class(country_div)
     
@@ -71,4 +74,3 @@ const add_country_name_class = (country_name) => {
     country_name.classList.add("mt-4")
 }
 
-display_countries()
